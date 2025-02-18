@@ -3,35 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoMo Connect Dashboard</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/dashboard.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/transactions.css">
-    <link rel="stylesheet" href="styles/transactionlist.css">
-    <link rel="stylesheet" href="styles/transactiondetails.css">
-    <link rel="stylesheet" href="styles/visualization.css">
-    <link rel="stylesheet" href="styles/filteredtransactions.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <title>MTN MoMo Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="font-inter bg-gray-50">
-    <div id="app">
-        <!-- Content will be dynamically injected here -->
-        <div class="filtered-transactions-container">
-            <div class="filtered-transactions-list"></div>
-            <div class="clear-filters-bar">
-                <button class="clear-filters-button">Clear</button>
-            </div>
+<body>
+    <div class="container">
+        <header>
+            <h1>MTN MoMo Dashboard</h1>
+        </header>
+        
+        <div class="filters">
+            <label for="transaction-type">Transaction Type:</label>
+            <select id="transaction-type">
+                <option value="">All</option>
+                <option value="deposit">Deposit</option>
+                <option value="withdrawal">Withdrawal</option>
+            </select>
+
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date">
+
+            <label for="end-date">End Date:</label>
+            <input type="date" id="end-date">
+
+            <button id="filter-btn">Apply Filters</button>
+            <button id="download-report">Download Report</button>
         </div>
-        <div class="snackbar">No transactions found</div>
-    </div>
-    
-    <!-- Scripts -->
-    <script type="module" src="scripts/router.js"></script>
-    <script type="module" src="scripts/app.js"></script>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Message</th>
+                    <th>Type</th>
+                    <th>Timestamp</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="sms-table-body">
+                <!-- Data will be inserted here -->
+            </tbody>
+        </table>
+
+        <div class="charts">
+            <canvas id="barChart"></canvas>
+            <canvas id="pieChart"></canvas>
+        </div>
 </body>
 </html>
