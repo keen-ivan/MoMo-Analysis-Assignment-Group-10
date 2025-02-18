@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoMo Connect Dashboard</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/transactions.css">
+    <link rel="stylesheet" href="styles/transactionlist.css">
+    <link rel="stylesheet" href="styles/transactiondetails.css">
+    <link rel="stylesheet" href="styles/visualization.css">
+    <link rel="stylesheet" href="styles/filteredtransactions.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="font-inter bg-gray-50">
+    <div id="app">
+        <!-- Content will be dynamically injected here -->
+        <div class="filtered-transactions-container">
+            <div class="filtered-transactions-list"></div>
+            <div class="clear-filters-bar">
+                <button class="clear-filters-button">Clear</button>
+            </div>
+        </div>
+        <div class="snackbar">No transactions found</div>
+    </div>
+    
+    <!-- Scripts -->
+    <script type="module" src="scripts/router.js"></script>
+    <script type="module" src="scripts/app.js"></script>
+</body>
+</html>

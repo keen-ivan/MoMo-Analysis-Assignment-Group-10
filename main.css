@@ -1,0 +1,127 @@
+:root {
+    /* Color Variables */
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #64748b;
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --background-color: #f8fafc;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-300: #d1d5db;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-white: #ffffff;
+    --color-red-600: #dc2626;
+
+    /* Spacing Variables */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Shadow Variables */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+#app {
+    position: relative;
+    min-height: 100vh;
+}
+
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+
+.filtered-transactions-container {
+    z-index: 2;
+}
+
+.dashboard-header {
+    z-index: 3;
+}
+
+/* Utility Classes */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-lg);
+}
+
+/* Button Styles */
+.btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Form Styles */
+.form-input {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Responsive Grid */
+.grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+@media (min-width: 640px) {
+    .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
